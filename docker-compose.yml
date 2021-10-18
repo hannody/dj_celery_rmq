@@ -30,5 +30,14 @@ services:
     command:
       - rabbitmq-server
 
+
+  celery:
+      restart: on-failure
+      build:
+        context: .
+      command: celery -A core worker -l DEBUG
+      volumes:
+        - .:/django
+      container_name: celery
 volumes:
   vols:

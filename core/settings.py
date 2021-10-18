@@ -39,7 +39,9 @@ MIDDLEWARE = [
 
 # Celery settings
 
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost'
+# amqp://guest:guest@ whatever name in docker-compose.yml for the broker.
+#
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq'
 
 #: Only add pickle to this list if your broker is secured
 #: from unwanted access (see userguide/security.html)
